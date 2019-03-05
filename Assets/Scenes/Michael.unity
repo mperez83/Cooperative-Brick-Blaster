@@ -125,6 +125,7 @@ GameObject:
   - component: {fileID: 36221844}
   - component: {fileID: 36221843}
   - component: {fileID: 36221840}
+  - component: {fileID: 36221845}
   m_Layer: 0
   m_Name: Red_Paddle
   m_TagString: Untagged
@@ -252,7 +253,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8889ea433e79f3c4c95e6241c9518c28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
+  speed: 5
+--- !u!50 &36221845
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 36221839}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1000000
+  m_LinearDrag: 1000000
+  m_AngularDrag: 0
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
 --- !u!1 &142536632
 GameObject:
   m_ObjectHideFlags: 0
@@ -265,6 +287,7 @@ GameObject:
   - component: {fileID: 142536635}
   - component: {fileID: 142536637}
   - component: {fileID: 142536634}
+  - component: {fileID: 142536633}
   m_Layer: 0
   m_Name: Blue_Paddle
   m_TagString: Untagged
@@ -272,6 +295,27 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!50 &142536633
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 142536632}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1000000
+  m_LinearDrag: 1000000
+  m_AngularDrag: 0
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 6
 --- !u!61 &142536634
 BoxCollider2D:
   m_ObjectHideFlags: 0

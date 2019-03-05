@@ -20,11 +20,13 @@ public class RedPaddle : MonoBehaviour
 
         if (Input.GetKey(KeyCode.A))
         {
-            transform.Translate(Vector2.left * moveAmount);
+            //transform.Translate(Vector2.left * moveAmount);
+            GetComponent<Rigidbody2D>().MovePosition(new Vector2(transform.position.x - moveAmount, transform.position.y));
         }
         else if (Input.GetKey(KeyCode.D))
         {
-            transform.Translate(Vector2.right * moveAmount);
+            //transform.Translate(Vector2.right * moveAmount);
+            GetComponent<Rigidbody2D>().MovePosition(new Vector2(transform.position.x + moveAmount, transform.position.y));
         }
     }
 
@@ -154,6 +156,6 @@ public class RedPaddle : MonoBehaviour
                 collisions.below = directionY == -1;
                 collisions.above = directionY == 1;
             }
-        }*/
-    }
+        }
+    }*/
 }

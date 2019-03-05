@@ -17,11 +17,13 @@ public class BluePaddle : MonoBehaviour
 
         if (Input.GetKey(KeyCode.LeftArrow))
         {
-            transform.Translate(Vector2.left * moveAmount);
+            //transform.Translate(Vector2.left * moveAmount);
+            GetComponent<Rigidbody2D>().MovePosition(new Vector2(transform.position.x - moveAmount, transform.position.y));
         }
         else if (Input.GetKey(KeyCode.RightArrow))
         {
-            transform.Translate(Vector2.right * moveAmount);
+            //transform.Translate(Vector2.right * moveAmount);
+            GetComponent<Rigidbody2D>().MovePosition(new Vector2(transform.position.x + moveAmount, transform.position.y));
         }
     }
 }
