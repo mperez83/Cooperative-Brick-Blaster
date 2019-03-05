@@ -5,11 +5,10 @@ using UnityEngine;
 public class BluePaddle : MonoBehaviour
 {
     public float speed = 1;
-    Rigidbody2D rb;
 
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
+        
     }
 
     void Update()
@@ -18,11 +17,11 @@ public class BluePaddle : MonoBehaviour
 
         if (Input.GetKey(KeyCode.LeftArrow))
         {
-            rb.MovePosition(new Vector2(transform.position.x - moveAmount, transform.position.y));
+            transform.Translate(Vector2.left * moveAmount);
         }
         else if (Input.GetKey(KeyCode.RightArrow))
         {
-            rb.MovePosition(new Vector2(transform.position.x + moveAmount, transform.position.y));
+            transform.Translate(Vector2.right * moveAmount);
         }
     }
 }

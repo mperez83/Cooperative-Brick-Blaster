@@ -123,8 +123,8 @@ GameObject:
   - component: {fileID: 36221842}
   - component: {fileID: 36221841}
   - component: {fileID: 36221844}
-  - component: {fileID: 36221840}
   - component: {fileID: 36221843}
+  - component: {fileID: 36221840}
   m_Layer: 0
   m_Name: Red_Paddle
   m_TagString: Untagged
@@ -220,27 +220,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!50 &36221843
-Rigidbody2D:
-  serializedVersion: 4
+--- !u!114 &36221843
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 36221839}
-  m_BodyType: 1
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 999
-  m_LinearDrag: 0
-  m_AngularDrag: 0
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ecd0416972b9be84f9d1aee7e2e86b61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  horizontalRayCount: 0
+  verticalRayCount: 0
+  horizontalRaySpacing: 0
+  verticalRaySpacing: 0
+  collisionMask:
+    serializedVersion: 2
+    m_Bits: 0
+  collider: {fileID: 0}
 --- !u!114 &36221844
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -253,7 +252,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8889ea433e79f3c4c95e6241c9518c28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 1
 --- !u!1 &142536632
 GameObject:
   m_ObjectHideFlags: 0
@@ -266,7 +265,6 @@ GameObject:
   - component: {fileID: 142536635}
   - component: {fileID: 142536637}
   - component: {fileID: 142536634}
-  - component: {fileID: 142536633}
   m_Layer: 0
   m_Name: Blue_Paddle
   m_TagString: Untagged
@@ -274,27 +272,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!50 &142536633
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 142536632}
-  m_BodyType: 1
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 999
-  m_LinearDrag: 0
-  m_AngularDrag: 0
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!61 &142536634
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -504,6 +481,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eaa9da6d17c7c634f8f78eab441314dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  screenTopEdge: 0
+  screenBottomEdge: 0
+  screenLeftEdge: 0
+  screenRightEdge: 0
 --- !u!4 &1118187898
 Transform:
   m_ObjectHideFlags: 0
