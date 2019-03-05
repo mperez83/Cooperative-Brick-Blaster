@@ -12,17 +12,17 @@ public class LevelSelect : MonoBehaviour
     
     public void Lvl1(){
         LevelSelected = "Level1";
-        Test.text = "Selected Level: " + LevelSelected;
+        Test.text = "Selected Level: " + LevelSelected; // for testing purposes
     }
 
     public void Lvl2(){
         LevelSelected = "Level2";
-        Test.text = "Selected Level: " + LevelSelected;
+        Test.text = "Selected Level: " + LevelSelected;// for testing purposes
     }
 
     public void Lvl3(){
         LevelSelected = "Level3";
-        Test.text = "Selected Level: " + LevelSelected;
+        Test.text = "Selected Level: " + LevelSelected;// for testing purposes
     }
 
     public void SelectLevel(){
