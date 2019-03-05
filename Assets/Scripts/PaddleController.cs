@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(RaycastController))]
-public class RedPaddle : MonoBehaviour
+public class PaddleController : MonoBehaviour
 {
     public float speed = 1;
 
-
+    public KeyCode moveLeftKey;
+    public KeyCode moveRightKey;
 
     void Start()
     {
@@ -18,16 +19,21 @@ public class RedPaddle : MonoBehaviour
     {
         float moveAmount = speed * Time.deltaTime;
 
-        if (Input.GetKey(KeyCode.A))
+        if (Input.GetKey(moveLeftKey))
         {
             //transform.Translate(Vector2.left * moveAmount);
             GetComponent<Rigidbody2D>().MovePosition(new Vector2(transform.position.x - moveAmount, transform.position.y));
         }
-        else if (Input.GetKey(KeyCode.D))
+        else if (Input.GetKey(moveRightKey))
         {
             //transform.Translate(Vector2.right * moveAmount);
             GetComponent<Rigidbody2D>().MovePosition(new Vector2(transform.position.x + moveAmount, transform.position.y));
         }
+
+        if (transform.position.x < -5)
+            transform.position = new Vector2(-5, transform.position.y);
+        else if (transform.position.x > 5)
+            transform.position = new Vector2(5, transform.position.y);
     }
 
 
