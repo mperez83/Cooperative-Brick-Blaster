@@ -12,4 +12,6 @@ public class globalVars : MonoBehaviour
     static public int g_player2Score = 111110; //temp values for testing
 
     static public int g_coopScore = 0;
+
+    //public bool g_counterDownDone = false;
 }

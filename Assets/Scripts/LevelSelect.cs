@@ -11,8 +11,10 @@ public class LevelSelect : MonoBehaviour
     public Button startButton, backButton, Level1, Level2, Level3;
     
     public void Lvl1(){
-        LevelSelected = "Level1";
+        //LevelSelected = "Level1";
+        LevelSelected = "Michael";
         Test.text = "Selected Level: " + LevelSelected; // for testing purposes
+
     }
 
     public void Lvl2(){
