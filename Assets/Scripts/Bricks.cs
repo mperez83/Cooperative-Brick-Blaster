@@ -3,13 +3,14 @@ using System.Collections;
 
 public class Bricks : MonoBehaviour
 {
+    public int breakCounter;
 
-    public GameObject brickParticle;
-
-    private void OnCollisionEnter(Collision collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        Instantiate(brickParticle, transform.position, Quaternion.identity);
-        Destroy(gameObject);
+        breakCounter--;
+        if(breakCounter <= 0){
+            Destroy(gameObject);
+        }
     }
 
 }
