@@ -7,6 +7,15 @@ public class GameMaster : MonoBehaviour
     public static GameMaster instance;
 
     [HideInInspector]
+    public bool g_coop = false;
+    [HideInInspector]
+    public int g_player1Score = 12486579;   //temp values for testing
+    [HideInInspector]
+    public int g_player2Score = 111110;     //temp values for testing
+    [HideInInspector]
+    public int g_coopScore = 0;
+
+    [HideInInspector]
     public float screenTopEdge;
     [HideInInspector]
     public float screenBottomEdge;
