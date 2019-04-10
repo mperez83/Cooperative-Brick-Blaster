@@ -14,7 +14,7 @@ public class PowerUpMovement : MonoBehaviour
     void Update()
     {
         Vector2 moveAmount = new Vector2(0, -fallSpeed);
-        transform.Translate(moveAmount);
+        transform.Translate(moveAmount * Time.deltaTime);
 
         if (transform.position.y < GameMaster.instance.screenBottomEdge)
         {
