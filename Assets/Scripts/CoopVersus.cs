@@ -6,17 +6,19 @@ using UnityEngine.UI;
 public class CoopVersus : MonoBehaviour
 {
     public Toggle coop;
-
     public Text coopToggleText;
 
-    void Update(){
-        if(coop.isOn){
+    void Update()
+    {
+        if (coop.isOn)
+        {
             coopToggleText.text = "Co-op Mode";
-            globalVars.g_coop = true;
+            GameMaster.instance.g_coop = true;
         }
-        else{
+        else
+        {
             coopToggleText.text = "Versus Mode";
-            globalVars.g_coop = false;
+            GameMaster.instance.g_coop = false;
         }
-    }  
+    }
 }
