@@ -13,7 +13,7 @@ public class LevelSelect : MonoBehaviour
     public void Lvl1()
     {
         //LevelSelected = "Level1";
-        LevelSelected = "Michael";
+        LevelSelected = "Level1";
         Test.text = "Selected Level: " + LevelSelected; // for testing purposes
 
     }

@@ -12,22 +12,15 @@ public class SpawnScoreBoards : MonoBehaviour
         if (GameMaster.instance.g_coop)
         {
             //initialize and show coop score
-            CoopScore = Instantiate(CoopScore);
-            CoopScore.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, false);
-            CoopScore.text = "Score: " + GameMaster.instance.g_coopScore.ToString();
+            CoopScore.gameObject.SetActive(true);
         }
         else
         {
             //Initialize and show player 1 score
-            Player1Score = Instantiate(Player1Score);
-            Player1Score.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, false);
-            Player1Score.text = "Score: " + GameMaster.instance.g_player1Score.ToString();
+            Player1Score.gameObject.SetActive(true);
 
-            //initialize and show player 2 score
-            Player2Score = Instantiate(Player2Score);
-            Player2Score.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, false);
-            Player2Score.text = "Score: " + GameMaster.instance.g_player2Score.ToString();
-
+            // //initialize and show player 2 score
+            Player2Score.gameObject.SetActive(true);
         }
     }
 
@@ -44,12 +37,12 @@ public class SpawnScoreBoards : MonoBehaviour
         else if (score == "player1")
         {
             GameMaster.instance.g_player1Score += amount;
-            CoopScore.text = "Score: " + GameMaster.instance.g_player1Score.ToString();
+            Player1Score.text = "Score: " + GameMaster.instance.g_player1Score.ToString();
         }
         else if (score == "player2")
         {
             GameMaster.instance.g_player2Score += amount;
-            CoopScore.text = "Score: " + GameMaster.instance.g_player2Score.ToString();
+            Player2Score.text = "Score: " + GameMaster.instance.g_player2Score.ToString();
         }
     }
 }
