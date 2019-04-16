@@ -949,6 +949,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eaa9da6d17c7c634f8f78eab441314dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  g_coop: 0
+  g_player1Score: 12486579
+  g_player2Score: 111110
+  g_coopScore: 0
   screenTopEdge: 0
   screenBottomEdge: 0
   screenLeftEdge: 0
@@ -1094,7 +1098,7 @@ MonoBehaviour:
   m_Script: {fileID: 1980459831, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
