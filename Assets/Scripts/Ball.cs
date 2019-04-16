@@ -17,9 +17,9 @@ public class Ball : MonoBehaviour
           launchDirection.y = 2f;
           
           if(randX == 0){
-               launchDirection.x = -2f;
+               launchDirection.x = -3f;
           }else{
-               launchDirection.x = 2f;
+               launchDirection.x = 3f;
           }
 
           rb = GetComponent<Rigidbody2D>();
