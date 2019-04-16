@@ -7,6 +7,7 @@ public class Ball : MonoBehaviour
 
      private Rigidbody2D rb;
      private bool ballInPlay;
+     public string name;
 
      void Awake()
      {
