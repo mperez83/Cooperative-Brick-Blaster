@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4887118931951713062}
   - component: {fileID: 4887118931951713067}
   m_Layer: 0
-  m_Name: Brick
+  m_Name: Blue Brick
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -120,4 +120,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   breakCounter: 0
-  name: blue
+  ballCheck: Blue Ball
