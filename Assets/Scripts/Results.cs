@@ -14,7 +14,10 @@ public class Results : MonoBehaviour
 
     // call this function to show results screen
     public void showResults(){
-        results.SetActive(true); // show results screen overlay
+        //pause everything when results screen show
+        Time.timeScale = 0f;
+        // show results screen overlay
+        results.SetActive(true); 
         //set scores
         CoopScore.text += GameMaster.instance.g_coopScore.ToString();
         VsScoreP1.text += GameMaster.instance.g_player1Score.ToString();
@@ -41,11 +44,14 @@ public class Results : MonoBehaviour
         }
     }
 
+    //when buttons are pressed, game unpauses
     public void retry(string CurrentLevel){
+        Time.timeScale = 1f;
         SceneManager.LoadScene(CurrentLevel);
     }
 
     public void goBackToLvlSlct(){
+        Time.timeScale = 1f;
         SceneManager.LoadScene("LevelSelect");
     }
 }

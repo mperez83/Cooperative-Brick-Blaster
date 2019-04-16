@@ -10,9 +10,20 @@ public class LevelSelect : MonoBehaviour
     public Text Test;
     public Button startButton, backButton, Level1, Level2, Level3;
 
+    //start out with grayed out start button
+    void Start(){
+        startButton.interactable = false;
+    }
+
+    //make start button clickable when a level is selected
+    void Update(){
+        if(LevelSelected != "None"){
+            startButton.interactable = true;
+        }
+    }
+
     public void Lvl1()
     {
-        //LevelSelected = "Level1";
         LevelSelected = "Level1";
         Test.text = "Selected Level: " + LevelSelected; // for testing purposes
 

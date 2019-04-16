@@ -195,9 +195,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: resumeGame
-        m_Mode: 1
+      - m_Target: {fileID: 1547296100348160821}
+        m_MethodName: retry
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -298,13 +298,14 @@ GameObject:
   - component: {fileID: 8671564909091791497}
   - component: {fileID: 4624176047199013835}
   - component: {fileID: 3750107296881430101}
+  - component: {fileID: 1547296100348160821}
   m_Layer: 5
   m_Name: Results
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &8671564909091791497
 RectTransform:
   m_ObjectHideFlags: 0
@@ -367,6 +368,23 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
+--- !u!114 &1547296100348160821
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4568722350771892841}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0238faf08a0b4ad4692c2424d0e418da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CoopScore: {fileID: 8301669746913383582}
+  VsScoreP1: {fileID: 6427731206356101277}
+  VsScoreP2: {fileID: 594073180382314532}
+  title: {fileID: 1716819245993297109}
+  results: {fileID: 4568722350771892841}
 --- !u!1 &4681842881697400830
 GameObject:
   m_ObjectHideFlags: 0
@@ -641,8 +659,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: returnToLevelSelect
+      - m_Target: {fileID: 1547296100348160821}
+        m_MethodName: goBackToLvlSlct
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
