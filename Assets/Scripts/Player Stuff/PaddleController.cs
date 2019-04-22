@@ -30,10 +30,10 @@ public class PaddleController : MonoBehaviour
             GetComponent<Rigidbody2D>().MovePosition(new Vector2(transform.position.x + moveAmount, transform.position.y));
         }
 
-        if (transform.position.x < -5)
-            transform.position = new Vector2(-5, transform.position.y);
-        else if (transform.position.x > 5)
-            transform.position = new Vector2(5, transform.position.y);
+        if (transform.position.x < GameMaster.instance.screenLeftEdge)
+            transform.position = new Vector2(GameMaster.instance.screenLeftEdge, transform.position.y);
+        else if (transform.position.x > GameMaster.instance.screenRightEdge)
+            transform.position = new Vector2(GameMaster.instance.screenRightEdge, transform.position.y);
     }
 
 

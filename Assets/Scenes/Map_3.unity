@@ -438,8 +438,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   g_coop: 0
-  g_player1Score: 12486579
-  g_player2Score: 111110
+  g_player1Score: 0
+  g_player2Score: 0
   g_coopScore: 0
   screenTopEdge: 0
   screenBottomEdge: 0

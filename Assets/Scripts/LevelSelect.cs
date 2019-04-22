@@ -24,20 +24,20 @@ public class LevelSelect : MonoBehaviour
 
     public void Lvl1()
     {
-        LevelSelected = "Level1";
+        LevelSelected = "Map_1";
         Test.text = "Selected Level: " + LevelSelected; // for testing purposes
 
     }
 
     public void Lvl2()
     {
-        LevelSelected = "Level2";
+        LevelSelected = "Map_2";
         Test.text = "Selected Level: " + LevelSelected;// for testing purposes
     }
 
     public void Lvl3()
     {
-        LevelSelected = "Level3";
+        LevelSelected = "Map_3";
         Test.text = "Selected Level: " + LevelSelected;// for testing purposes
     }
 
