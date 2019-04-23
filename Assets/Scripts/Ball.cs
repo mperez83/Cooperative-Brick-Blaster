@@ -7,7 +7,9 @@ public class Ball : MonoBehaviour
     public enum BallType { Red, Blue, Grey };
     public BallType ballType;
     public GameObject respawnBall;
+
     Rigidbody2D rb;
+    GameObject gameController;
 
     void Start()
     {
@@ -25,6 +27,7 @@ public class Ball : MonoBehaviour
             launchDirection.x = 3f;
         }
 
+        gameController = GameObject.FindGameObjectWithTag("GameController");
         rb = GetComponent<Rigidbody2D>();
         rb.velocity = launchDirection;
 
@@ -41,8 +44,8 @@ public class Ball : MonoBehaviour
         {
             if (GameMaster.instance.g_coop)
             {
-                GameMaster.instance.g_coopLives--;
-                if (GameMaster.instance.g_coopLives <= 0)
+                gameController.GetComponent<CoopHandler>().coopLives--;
+                if (gameController.GetComponent<CoopHandler>().coopLives <= 0)
                 {
                     GameObject.FindGameObjectWithTag("Results").transform.Find("Results").GetComponent<Results>().showResults();
                     GameObject.FindGameObjectWithTag("Results").transform.Find("Results").transform.Find("Title").GetComponent<Text>().text = "Game Over!";
@@ -55,15 +58,10 @@ public class Ball : MonoBehaviour
             else
             {
                 if (ballType == BallType.Red)
-                {
-                    GameMaster.instance.g_player1Score -= 100;
-                    GameMaster.instance.UpdateScoreText();
-                }
+                    gameController.GetComponent<VersusHandler>().player1Score -= 100;
                 else if (ballType == BallType.Blue)
-                {
-                    GameMaster.instance.g_player2Score -= 100;
-                    GameMaster.instance.UpdateScoreText();
-                }
+                    gameController.GetComponent<VersusHandler>().player2Score -= 100;
+                gameController.GetComponent<VersusHandler>().UpdateScoreText();
 
                 Instantiate(respawnBall, new Vector2(0, -2), Quaternion.identity);
             }

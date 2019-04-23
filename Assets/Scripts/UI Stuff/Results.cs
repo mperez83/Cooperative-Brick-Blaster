@@ -15,52 +15,45 @@ public class Results : MonoBehaviour
     // call this function to show results screen
     public void showResults()
     {
-        //pause everything when results screen show
         Time.timeScale = 0f;
-        // show results screen overlay
         results.SetActive(true);
-        //set scores
-        CoopScore.text += GameMaster.instance.g_coopScore.ToString();
-        VsScoreP1.text += GameMaster.instance.g_player1Score.ToString();
-        VsScoreP2.text += GameMaster.instance.g_player2Score.ToString();
-        //show score if in coop mode
+
+        GameObject gameController = GameObject.FindGameObjectWithTag("GameController");
+
         if (GameMaster.instance.g_coop == true)
         {
             CoopScore.gameObject.SetActive(true);
+            CoopScore.text = gameController.GetComponent<CoopHandler>().coopScore.ToString();
         }
-        //show score if in vs mode
         else
         {
             VsScoreP1.gameObject.SetActive(true);
             VsScoreP2.gameObject.SetActive(true);
-            //shows which player won
-            if (GameMaster.instance.g_player1Score > GameMaster.instance.g_player2Score)
-            {
+
+            int p1Score = gameController.GetComponent<VersusHandler>().player1Score;
+            int p2Score = gameController.GetComponent<VersusHandler>().player2Score;
+
+            VsScoreP1.text = p1Score.ToString();
+            VsScoreP2.text = p2Score.ToString();
+
+            if (p1Score > p2Score)
                 title.text = "Player 1 Wins!";
-            }
-            else if (GameMaster.instance.g_player1Score < GameMaster.instance.g_player2Score)
-            {
+            else if (p1Score < p2Score)
                 title.text = "Player 2 Wins!";
-            }
             else
-            {
                 title.text = "Tie!";
-            }
         }
     }
 
-    //when buttons are pressed, game unpauses
-    public void retry(string CurrentLevel)
+    public void RestartLevel(string CurrentLevel)
     {
         Time.timeScale = 1f;
-        GameMaster.instance.ResetLevelData();
         SceneManager.LoadScene(CurrentLevel);
     }
 
-    public void goBackToLvlSlct()
+    public void ReturnToLevelSelect()
     {
         Time.timeScale = 1f;
-        GameMaster.instance.ResetLevelData();
         SceneManager.LoadScene("LevelSelect");
     }
 }

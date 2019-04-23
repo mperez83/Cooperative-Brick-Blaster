@@ -6,9 +6,12 @@ using UnityEngine.UI;
 public class SpawnScoreBoards : MonoBehaviour
 {
     public Text CoopScore, Player1Score, Player2Score;
+    GameObject gameController;
 
     void Start()
     {
+        gameController = GameObject.FindGameObjectWithTag("GameController");
+
         if (GameMaster.instance.g_coop)
         {
             //initialize and show coop score
@@ -27,22 +30,22 @@ public class SpawnScoreBoards : MonoBehaviour
 
 
     //call this method in other scripts to update the score, arguments are a string to which the score is added onto, and the amount/points added to the score
-    public void UpdateScores(string score, int amount)
+    /*public void UpdateScores(string score, int amount)
     {
         if (score == "coop")
         {
-            GameMaster.instance.g_coopScore += amount;
-            CoopScore.text = "Score: " + GameMaster.instance.g_coopScore.ToString();
+            gameController.GetComponent<CoopHandler>().coopScore += amount;
+            CoopScore.text = "Score: " + gameController.GetComponent<CoopHandler>().coopScore.ToString();
         }
         else if (score == "player1")
         {
-            GameMaster.instance.g_player1Score += amount;
+            gameController.GetComponent<VersusHandler>().player1Score += amount;
             Player1Score.text = "Score: " + GameMaster.instance.g_player1Score.ToString();
         }
         else if (score == "player2")
         {
-            GameMaster.instance.g_player2Score += amount;
+            gameController.GetComponent<VersusHandler>().player2Score += amount;
             Player2Score.text = "Score: " + GameMaster.instance.g_player2Score.ToString();
         }
-    }
+    }*/
 }

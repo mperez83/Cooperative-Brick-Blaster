@@ -10,8 +10,14 @@ public class Brick : MonoBehaviour
     public Sprite blueBrick;
     public Sprite greyBrick;
 
+    GameObject gameController;
+
+
+
     void Start()
     {
+        gameController = GameObject.FindGameObjectWithTag("GameController");
+
         if (GameMaster.instance.g_coop == false)
         {
             brickType = Ball.BallType.Grey;
@@ -32,17 +38,18 @@ public class Brick : MonoBehaviour
                 {
                     if (GameMaster.instance.g_coop)
                     {
-                        GameMaster.instance.g_coopScore += 100;
+                        gameController.GetComponent<CoopHandler>().coopScore += 100;
+                        gameController.GetComponent<CoopHandler>().UpdateScoreText();
                     }
                     else
                     {
                         if (ball.ballType == Ball.BallType.Red)
-                            GameMaster.instance.g_player1Score += 100;
+                            gameController.GetComponent<VersusHandler>().player1Score += 100;
                         else if (ball.ballType == Ball.BallType.Blue)
-                            GameMaster.instance.g_player2Score += 100;
-                    }
+                            gameController.GetComponent<VersusHandler>().player2Score += 100;
 
-                    GameMaster.instance.UpdateScoreText();
+                        gameController.GetComponent<VersusHandler>().UpdateScoreText();
+                    }
 
                     if (transform.parent.childCount == 1)
                     {

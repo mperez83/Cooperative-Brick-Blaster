@@ -2210,10 +2210,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   g_coop: 0
-  g_coopScore: 0
-  g_coopLives: 3
-  g_player1Score: 0
-  g_player2Score: 0
   screenTopEdge: 0
   screenBottomEdge: 0
   screenLeftEdge: 0
@@ -3286,10 +3282,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1375694226}
-  - component: {fileID: 1375694227}
+  - component: {fileID: 1375694229}
   m_Layer: 0
-  m_Name: GamemodeHandler
-  m_TagString: Untagged
+  m_Name: Gamemode Handler
+  m_TagString: GameController
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3308,7 +3304,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1375694227
+--- !u!114 &1375694229
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3317,7 +3313,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1375694225}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 57b2da8631a2aa94c8179658b41f9e6c, type: 3}
+  m_Script: {fileID: 11500000, guid: 0b1360582749bef4fa20e8a7822c4152, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &1398256832
@@ -5648,7 +5644,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1975973743313417990}
-        m_MethodName: retry
+        m_MethodName: RestartLevel
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6070,7 +6066,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1975973743313417990}
-        m_MethodName: goBackToLvlSlct
+        m_MethodName: ReturnToLevelSelect
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
