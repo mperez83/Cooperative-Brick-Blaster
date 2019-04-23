@@ -23,7 +23,7 @@ public class Results : MonoBehaviour
         if (GameMaster.instance.g_coop == true)
         {
             CoopScore.gameObject.SetActive(true);
-            CoopScore.text = gameController.GetComponent<CoopHandler>().coopScore.ToString();
+            CoopScore.text = "Final score: " + gameController.GetComponent<CoopHandler>().coopScore.ToString();
         }
         else
         {
