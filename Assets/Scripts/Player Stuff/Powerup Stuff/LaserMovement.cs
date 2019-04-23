@@ -5,6 +5,14 @@ using UnityEngine;
 public class LaserMovement : MonoBehaviour
 {
     public float travelSpeed = 20;
+    [HideInInspector]
+    public int playerNum;
+    GameObject gameController;
+
+    void Start()
+    {
+        gameController = GameObject.FindGameObjectWithTag("GameController");
+    }
 
     void Update()
     {
@@ -19,12 +27,30 @@ public class LaserMovement : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        //This is where you can put the code for gaining points for destroying a brick
-        /*if (other.CompareTag("Brick"))
+        if (other.CompareTag("Brick"))
         {
+            if (GameMaster.instance.g_coop)
+            {
+                gameController.GetComponent<CoopHandler>().coopScore += 100;
+                gameController.GetComponent<CoopHandler>().UpdateScoreText();
+            }
+            else
+            {
+                if (playerNum == 1)
+                    gameController.GetComponent<VersusHandler>().player1Score += 100;
+                else if (playerNum == 2)
+                    gameController.GetComponent<VersusHandler>().player2Score += 100;
+
+                gameController.GetComponent<VersusHandler>().UpdateScoreText();
+            }
+
+            if (other.transform.parent.childCount == 1)
+            {
+                GameObject.FindGameObjectWithTag("Results").transform.Find("Results").GetComponent<Results>().showResults();
+            }
+
             Destroy(other.gameObject);
-            //score.Add(100);
             Destroy(gameObject);
-        }*/
+        }
     }
 }

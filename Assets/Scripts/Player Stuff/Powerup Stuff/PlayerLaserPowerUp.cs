@@ -25,7 +25,8 @@ public class PlayerLaserPowerUp : MonoBehaviour
     {
         if (Input.GetKeyDown(keyToPress))
         {
-            Instantiate(laserPrefab, new Vector2(transform.position.x, transform.position.y + 0.5f), Quaternion.identity);
+            GameObject laser = Instantiate(laserPrefab, new Vector2(transform.position.x, transform.position.y + 0.5f), Quaternion.identity);
+            laser.GetComponent<LaserMovement>().playerNum = GetComponent<PlayerData>().playerNumber;
         }
 
         powerUpTimer -= Time.deltaTime;
