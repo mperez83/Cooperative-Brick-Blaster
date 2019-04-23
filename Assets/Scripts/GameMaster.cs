@@ -52,6 +52,14 @@ public class GameMaster : MonoBehaviour
         screenRightEdge = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, 0, -(Camera.main.transform.position.z))).x;
     }
 
+    public void ResetLevelData()
+    {
+        g_coopLives = 3;
+        g_coopScore = 0;
+        g_player1Score = 0;
+        g_player2Score = 0;
+    }
+
     public void UpdateScoreText()
     {
         GameObject scoreboard = GameObject.FindGameObjectWithTag("Scoreboard");

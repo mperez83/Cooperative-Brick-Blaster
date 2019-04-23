@@ -95,6 +95,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ballType: 1
+  respawnBall: {fileID: 1008149563047826582}
 --- !u!58 &1008149563047826581
 CircleCollider2D:
   m_ObjectHideFlags: 0

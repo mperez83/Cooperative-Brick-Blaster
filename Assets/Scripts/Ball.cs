@@ -1,10 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class Ball : MonoBehaviour
 {
     public enum BallType { Red, Blue, Grey };
     public BallType ballType;
+    public GameObject respawnBall;
     Rigidbody2D rb;
 
     void Start()
@@ -31,6 +33,24 @@ public class Ball : MonoBehaviour
     {
         if (transform.position.y < GameMaster.instance.screenBottomEdge)
         {
+            if (GameMaster.instance.g_coop)
+            {
+                GameMaster.instance.g_coopLives--;
+                if (GameMaster.instance.g_coopLives <= 0)
+                {
+                    GameObject.FindGameObjectWithTag("Results").transform.Find("Results").GetComponent<Results>().showResults();
+                    GameObject.FindGameObjectWithTag("Results").transform.Find("Results").transform.Find("Title").GetComponent<Text>().text = "Game Over!";
+                }
+                else
+                {
+                    Instantiate(respawnBall, new Vector2(0, -2), Quaternion.identity);
+                }
+            }
+            else
+            {
+
+            }
+
             Destroy(gameObject);
         }
     }
