@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class Brick : MonoBehaviour
 {
@@ -28,7 +29,15 @@ public class Brick : MonoBehaviour
                         else if (ball.ballType == Ball.BallType.Blue)
                             GameMaster.instance.g_player2Score += 100;
                     }
+
                     GameMaster.instance.UpdateScoreText();
+
+                    if (transform.parent.childCount == 1)
+                    {
+                        GameObject.FindGameObjectWithTag("Results").transform.Find("Results").GetComponent<Results>().showResults();
+                        GameObject.FindGameObjectWithTag("Results").transform.Find("Results").transform.Find("Title").GetComponent<Text>().text = "Level Complete!";
+                    }
+
                     Destroy(gameObject);
                 }
             }
