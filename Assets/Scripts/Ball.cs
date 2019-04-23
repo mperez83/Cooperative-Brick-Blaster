@@ -27,6 +27,12 @@ public class Ball : MonoBehaviour
 
         rb = GetComponent<Rigidbody2D>();
         rb.velocity = launchDirection;
+
+        if (GameMaster.instance.g_coop == false)
+        {
+            ChangeBallType(BallType.Grey);
+            gameObject.AddComponent<BallClaim>();
+        }
     }
 
     void Update()
@@ -48,10 +54,42 @@ public class Ball : MonoBehaviour
             }
             else
             {
+                if (ballType == BallType.Red)
+                {
+                    GameMaster.instance.g_player1Score -= 100;
+                    GameMaster.instance.UpdateScoreText();
+                }
+                else if (ballType == BallType.Blue)
+                {
+                    GameMaster.instance.g_player2Score -= 100;
+                    GameMaster.instance.UpdateScoreText();
+                }
 
+                Instantiate(respawnBall, new Vector2(0, -2), Quaternion.identity);
             }
 
             Destroy(gameObject);
+        }
+    }
+
+    public void ChangeBallType(BallType newBallType)
+    {
+        switch (newBallType)
+        {
+            case BallType.Red:
+                ballType = BallType.Red;
+                GetComponent<SpriteRenderer>().color = Color.red;
+                break;
+
+            case BallType.Blue:
+                ballType = BallType.Blue;
+                GetComponent<SpriteRenderer>().color = Color.blue;
+                break;
+
+            case BallType.Grey:
+                ballType = BallType.Grey;
+                GetComponent<SpriteRenderer>().color = Color.grey;
+                break;
         }
     }
 }

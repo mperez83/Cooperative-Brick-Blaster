@@ -6,6 +6,18 @@ public class Brick : MonoBehaviour
 {
     public int breakCounter;
     public Ball.BallType brickType;
+    public Sprite redBrick;
+    public Sprite blueBrick;
+    public Sprite greyBrick;
+
+    void Start()
+    {
+        if (GameMaster.instance.g_coop == false)
+        {
+            brickType = Ball.BallType.Grey;
+            GetComponent<SpriteRenderer>().sprite = greyBrick;
+        }
+    }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -35,7 +47,6 @@ public class Brick : MonoBehaviour
                     if (transform.parent.childCount == 1)
                     {
                         GameObject.FindGameObjectWithTag("Results").transform.Find("Results").GetComponent<Results>().showResults();
-                        GameObject.FindGameObjectWithTag("Results").transform.Find("Results").transform.Find("Title").GetComponent<Text>().text = "Level Complete!";
                     }
 
                     Destroy(gameObject);
