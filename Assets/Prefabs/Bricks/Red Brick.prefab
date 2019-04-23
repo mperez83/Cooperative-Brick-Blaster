@@ -98,6 +98,8 @@ MonoBehaviour:
   redBrick: {fileID: 21300000, guid: 30543a69764f8e94ca18c65b2ad7004d, type: 3}
   blueBrick: {fileID: 21300000, guid: 25e94ff6a2c73c74cae9fcea8c67b2b9, type: 3}
   greyBrick: {fileID: 21300000, guid: ae41048167d0af34c80bae0d91d1b3cb, type: 3}
+  powerUpPrefab: {fileID: 8776490582830805284, guid: f7df1d3c0de74114190b5b661390c9a4,
+    type: 3}
 --- !u!61 &7864165875461208336
 BoxCollider2D:
   m_ObjectHideFlags: 0

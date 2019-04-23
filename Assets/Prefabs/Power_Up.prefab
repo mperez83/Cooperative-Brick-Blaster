@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &8648909741515627915
+--- !u!1 &8776490582830805284
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,38 +8,38 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 8648909742816383933}
-  - component: {fileID: 8648909741515627916}
-  - component: {fileID: 8648909741515627914}
-  - component: {fileID: 8648909741515627917}
+  - component: {fileID: 8776490582830805287}
+  - component: {fileID: 8776490582830805286}
+  - component: {fileID: 8776490582830805285}
+  - component: {fileID: 4226200088071476969}
   m_Layer: 0
-  m_Name: Blue Brick
+  m_Name: Power_Up
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &8648909742816383933
+--- !u!4 &8776490582830805287
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8648909741515627915}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_GameObject: {fileID: 8776490582830805284}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &8648909741515627916
+--- !u!212 &8776490582830805286
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8648909741515627915}
+  m_GameObject: {fileID: 8776490582830805284}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -70,59 +70,53 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 25e94ff6a2c73c74cae9fcea8c67b2b9, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 60939895d0b582a478e142b88e59560c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 3.84, y: 1.28}
+  m_Size: {x: 0.5, y: 0.5}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &8648909741515627914
+--- !u!114 &8776490582830805285
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8648909741515627915}
+  m_GameObject: {fileID: 8776490582830805284}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5b9e569acae3e4dd3ac80db56cdb29b9, type: 3}
+  m_Script: {fileID: 11500000, guid: c83a0bee467127846a00b88114a1812e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  breakCounter: 1
-  brickType: 1
-  redBrick: {fileID: 21300000, guid: 30543a69764f8e94ca18c65b2ad7004d, type: 3}
-  blueBrick: {fileID: 21300000, guid: 25e94ff6a2c73c74cae9fcea8c67b2b9, type: 3}
-  greyBrick: {fileID: 21300000, guid: ae41048167d0af34c80bae0d91d1b3cb, type: 3}
-  powerUpPrefab: {fileID: 8776490582830805284, guid: f7df1d3c0de74114190b5b661390c9a4,
-    type: 3}
---- !u!61 &8648909741515627917
+  fallSpeed: 2
+--- !u!61 &4226200088071476969
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8648909741515627915}
+  m_GameObject: {fileID: 8776490582830805284}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 3.84, y: 1.28}
-    newSize: {x: 3.84, y: 1.28}
+    oldSize: {x: 0.5, y: 0.5}
+    newSize: {x: 0.5, y: 0.5}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 3.84, y: 1.28}
+  m_Size: {x: 0.5, y: 0.5}
   m_EdgeRadius: 0

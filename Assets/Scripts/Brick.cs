@@ -9,6 +9,7 @@ public class Brick : MonoBehaviour
     public Sprite redBrick;
     public Sprite blueBrick;
     public Sprite greyBrick;
+    public GameObject powerUpPrefab;
 
     GameObject gameController;
 
@@ -55,6 +56,8 @@ public class Brick : MonoBehaviour
                     {
                         GameObject.FindGameObjectWithTag("Results").transform.Find("Results").GetComponent<Results>().showResults();
                     }
+
+                    if (Random.Range(0, 10) == 0) Instantiate(powerUpPrefab, new Vector2(transform.position.x, transform.position.y), Quaternion.identity);
 
                     Destroy(gameObject);
                 }
