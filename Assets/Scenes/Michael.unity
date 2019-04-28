@@ -438,7 +438,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 185038258}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 972243669}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0238faf08a0b4ad4692c2424d0e418da, type: 3}
@@ -910,6 +910,12 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 8744201416543896420, guid: 90572e5bd42ed7a48a6c4249e98266b7,
     type: 3}
   m_PrefabInstance: {fileID: 8744201416964368451}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &972243669 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4568722350771892841, guid: 50a3a6cbe3305bb4cbb01ddf1954f52c,
+    type: 3}
+  m_PrefabInstance: {fileID: 185038258}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1118187896
 GameObject:
@@ -1441,6 +1447,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelSelectScene: LevelSelect
   pauseMenu: {fileID: 724691750}
+  results: {fileID: 972243669}
+  cntDwn: {fileID: 864013947082703293}
   isPaused: 0
 --- !u!1 &2035332779
 GameObject:
