@@ -12,12 +12,12 @@ public class CoopVersus : MonoBehaviour
     {
         if (coop.isOn)
         {
-            coopToggleText.text = "Co-op Mode";
+            coopToggleText.text = "Mode:\nCo-op";
             GameMaster.instance.g_coop = true;
         }
         else
         {
-            coopToggleText.text = "Versus Mode";
+            coopToggleText.text = "Mode:\nVersus";
             GameMaster.instance.g_coop = false;
         }
     }

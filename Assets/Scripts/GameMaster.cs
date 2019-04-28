@@ -14,6 +14,8 @@ public class GameMaster : MonoBehaviour
     public int g_player2Score = 111110;     //temp values for testing
     [HideInInspector]
     public int g_coopScore = 0;
+    [HideInInspector]
+    public string LevelSelected = "None";
 
     [HideInInspector]
     public float screenTopEdge;
