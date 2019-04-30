@@ -2,14 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class CoopVersus : MonoBehaviour
 {
     public Toggle coop;
-    public Text coopToggleText;
+    public TextMeshProUGUI coopToggleText;
 
     void Update()
     {
+         //update coop toggle & text
         if (coop.isOn)
         {
             coopToggleText.text = "Mode:\nCo-op";

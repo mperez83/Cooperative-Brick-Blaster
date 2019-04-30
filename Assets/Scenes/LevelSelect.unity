@@ -361,6 +361,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 933324778}
     m_Modifications:
+    - target: {fileID: 1665269849499519415, guid: c14b0106858ebfb4aa2c949f7a880fc6,
+        type: 3}
+      propertyPath: m_Name
+      value: MapButton (1)
+      objectReference: {fileID: 0}
     - target: {fileID: 1665269849499519408, guid: c14b0106858ebfb4aa2c949f7a880fc6,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
@@ -470,11 +475,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1665269849499519415, guid: c14b0106858ebfb4aa2c949f7a880fc6,
-        type: 3}
-      propertyPath: m_Name
-      value: MapButton (1)
       objectReference: {fileID: 0}
     - target: {fileID: 6836850810309949716, guid: c14b0106858ebfb4aa2c949f7a880fc6,
         type: 3}
@@ -742,6 +742,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 933324778}
     m_Modifications:
+    - target: {fileID: 1665269849499519415, guid: c14b0106858ebfb4aa2c949f7a880fc6,
+        type: 3}
+      propertyPath: m_Name
+      value: MapButton
+      objectReference: {fileID: 0}
     - target: {fileID: 1665269849499519408, guid: c14b0106858ebfb4aa2c949f7a880fc6,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
@@ -852,11 +857,6 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 1665269849499519415, guid: c14b0106858ebfb4aa2c949f7a880fc6,
-        type: 3}
-      propertyPath: m_Name
-      value: MapButton
-      objectReference: {fileID: 0}
     - target: {fileID: 6836850810309949716, guid: c14b0106858ebfb4aa2c949f7a880fc6,
         type: 3}
       propertyPath: m_havePropertiesChanged
@@ -897,6 +897,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 933324778}
     m_Modifications:
+    - target: {fileID: 1665269849499519415, guid: c14b0106858ebfb4aa2c949f7a880fc6,
+        type: 3}
+      propertyPath: m_Name
+      value: MapButton (2)
+      objectReference: {fileID: 0}
     - target: {fileID: 1665269849499519408, guid: c14b0106858ebfb4aa2c949f7a880fc6,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
@@ -1006,11 +1011,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1665269849499519415, guid: c14b0106858ebfb4aa2c949f7a880fc6,
-        type: 3}
-      propertyPath: m_Name
-      value: MapButton (2)
       objectReference: {fileID: 0}
     - target: {fileID: 6836850810309949716, guid: c14b0106858ebfb4aa2c949f7a880fc6,
         type: 3}
@@ -1896,6 +1896,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1518343066}
   - component: {fileID: 1518343065}
+  - component: {fileID: 1518343067}
+  - component: {fileID: 1518343068}
   m_Layer: 0
   m_Name: GameObject
   m_TagString: Untagged
@@ -1916,13 +1918,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startButton: {fileID: 1987577516}
-  coop: {fileID: 698063896}
-  coopToggleText: {fileID: 117906546}
-  preview: {fileID: 1540054024}
-  previewDefault: {fileID: 21300000, guid: eb3fbabe417941e4a94db09998449067, type: 3}
-  previewMap1: {fileID: 21300000, guid: 7777796e55636cd4da7ceced786b8f96, type: 3}
-  previewMap2: {fileID: 21300000, guid: ce5b2f75e5132ca4bb99b415ecc307fb, type: 3}
-  previewMap3: {fileID: 21300000, guid: 62bbaca8c3af7674b9bd2673750d5799, type: 3}
 --- !u!4 &1518343066
 Transform:
   m_ObjectHideFlags: 0
@@ -1937,6 +1932,37 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1518343067
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1518343064}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51e74f8c69212d34682c4b926f9640cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  coop: {fileID: 698063896}
+  coopToggleText: {fileID: 117906546}
+--- !u!114 &1518343068
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1518343064}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e97b60b06a8b50408482da1aa93b56e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  preview: {fileID: 1540054024}
+  previewDefault: {fileID: 21300000, guid: eb3fbabe417941e4a94db09998449067, type: 3}
+  previewMap1: {fileID: 21300000, guid: 7777796e55636cd4da7ceced786b8f96, type: 3}
+  previewMap2: {fileID: 21300000, guid: ce5b2f75e5132ca4bb99b415ecc307fb, type: 3}
+  previewMap3: {fileID: 21300000, guid: 62bbaca8c3af7674b9bd2673750d5799, type: 3}
 --- !u!1 &1540054022
 GameObject:
   m_ObjectHideFlags: 0
@@ -2314,10 +2340,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startButton: {fileID: 1987577516}
-  coop: {fileID: 0}
-  coopToggleText: {fileID: 0}
-  preview: {fileID: 0}
-  previewDefault: {fileID: 0}
-  previewMap1: {fileID: 0}
-  previewMap2: {fileID: 0}
-  previewMap3: {fileID: 0}
