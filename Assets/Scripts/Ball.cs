@@ -64,7 +64,7 @@ public class Ball : MonoBehaviour
         }
 
         // Ball Destroy & Respawn
-        if (transform.position.y < GameMaster.instance.screenBottomEdge)
+        if (GetIfBallWentOffscreen())
         {
             ballInPlay = false;
             if (GameMaster.instance.g_coop)
@@ -132,6 +132,17 @@ public class Ball : MonoBehaviour
 
             Destroy(gameObject);
         }
+    }
+
+    bool GetIfBallWentOffscreen()
+    {
+        if (transform.position.y < GameMaster.instance.screenBottomEdge ||
+            transform.position.y > GameMaster.instance.screenTopEdge ||
+            transform.position.x < GameMaster.instance.screenLeftEdge ||
+            transform.position.x > GameMaster.instance.screenRightEdge)
+            return true;
+        else
+            return false;
     }
 
     public void ChangeBallType(BallType newBallType)

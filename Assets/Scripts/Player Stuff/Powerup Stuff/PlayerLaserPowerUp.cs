@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerLaserPowerUp : MonoBehaviour
 {
-    float powerUpTimer = 12;
+    float powerUpTimer = 6;
     KeyCode keyToPress;
 
     PaddleAudioHandler pah;
