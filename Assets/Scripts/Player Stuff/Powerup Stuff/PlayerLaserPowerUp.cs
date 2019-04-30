@@ -18,7 +18,7 @@ public class PlayerLaserPowerUp : MonoBehaviour
             Destroy(this);
         }
 
-        keyToPress = (GetComponent<PlayerData>().playerNumber == 1) ? KeyCode.F : KeyCode.RightControl;
+        keyToPress = (GetComponent<PlayerData>().playerNumber == 1) ? KeyCode.Space : KeyCode.RightControl;
         pah = GetComponent<PaddleAudioHandler>();
         laserPrefab = GetComponent<PlayerData>().laserPrefab;
     }
