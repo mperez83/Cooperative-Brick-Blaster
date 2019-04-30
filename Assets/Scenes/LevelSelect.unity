@@ -124,7 +124,7 @@ GameObject:
   - component: {fileID: 117906547}
   - component: {fileID: 117906546}
   m_Layer: 5
-  m_Name: coopToggleText
+  m_Name: CoopToggleText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1365,7 +1365,7 @@ GameObject:
   - component: {fileID: 698063895}
   - component: {fileID: 698063896}
   m_Layer: 5
-  m_Name: coop
+  m_Name: CoopToggle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1975,7 +1975,7 @@ GameObject:
   - component: {fileID: 1540054025}
   - component: {fileID: 1540054024}
   m_Layer: 5
-  m_Name: preview
+  m_Name: MapPreview
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
