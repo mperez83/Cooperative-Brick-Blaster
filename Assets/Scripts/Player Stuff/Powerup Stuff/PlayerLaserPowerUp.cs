@@ -7,6 +7,7 @@ public class PlayerLaserPowerUp : MonoBehaviour
     float powerUpTimer = 12;
     KeyCode keyToPress;
 
+    PaddleAudioHandler pah;
     GameObject laserPrefab;
 
     void Start()
@@ -18,6 +19,7 @@ public class PlayerLaserPowerUp : MonoBehaviour
         }
 
         keyToPress = (GetComponent<PlayerData>().playerNumber == 1) ? KeyCode.F : KeyCode.RightControl;
+        pah = GetComponent<PaddleAudioHandler>();
         laserPrefab = GetComponent<PlayerData>().laserPrefab;
     }
 
@@ -27,6 +29,7 @@ public class PlayerLaserPowerUp : MonoBehaviour
         {
             GameObject laser = Instantiate(laserPrefab, new Vector2(transform.position.x, transform.position.y + 0.5f), Quaternion.identity);
             laser.GetComponent<LaserMovement>().playerNum = GetComponent<PlayerData>().playerNumber;
+            pah.PlayLaserSound();
         }
 
         powerUpTimer -= Time.deltaTime;

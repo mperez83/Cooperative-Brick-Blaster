@@ -8,6 +8,10 @@ public class Ball : MonoBehaviour
     public BallType ballType;
     public GameObject respawnBall;
 
+    public AudioClip brickBreakSound;
+    public AudioClip laserHitSound;
+
+    AudioSource audioSource;
     Rigidbody2D rb;
     GameObject gameController;
 
@@ -27,6 +31,7 @@ public class Ball : MonoBehaviour
             launchDirection.x = 3f;
         }
 
+        audioSource = GetComponent<AudioSource>();
         gameController = GameObject.FindGameObjectWithTag("GameController");
         rb = GetComponent<Rigidbody2D>();
         rb.velocity = launchDirection;
@@ -88,6 +93,27 @@ public class Ball : MonoBehaviour
                 ballType = BallType.Grey;
                 GetComponent<SpriteRenderer>().color = Color.grey;
                 break;
+        }
+    }
+
+    void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.CompareTag("Brick"))
+        {
+            audioSource.clip = brickBreakSound;
+            audioSource.Play();
+        }
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Laser"))
+        {
+            audioSource.clip = laserHitSound;
+            audioSource.Play();
+
+            Destroy(other.gameObject);
+            rb.AddForce(new Vector2(0, 100));
         }
     }
 }
