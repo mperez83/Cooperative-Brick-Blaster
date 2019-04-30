@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1027355292506262046}
   - component: {fileID: 840875439273289439}
   - component: {fileID: 1339603003431312171}
+  - component: {fileID: 2700092767711607490}
   - component: {fileID: 7579195178711178526}
   - component: {fileID: 445315929841495798}
   - component: {fileID: 5435154877287866737}
@@ -99,6 +100,20 @@ MonoBehaviour:
   respawnBall: {fileID: 4286393428879606560}
   brickBreakSound: {fileID: 8300000, guid: e3c6fc8e5d71a8d47b465f52a2983ba1, type: 3}
   laserHitSound: {fileID: 8300000, guid: bdce681abf7521d44bbe7f39e6b43d18, type: 3}
+--- !u!114 &2700092767711607490
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4286393428879606560}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50e386f9478b5194ab3499f58ac1511c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minMagnitude: 5
+  maxMagnitude: 10
 --- !u!58 &7579195178711178526
 CircleCollider2D:
   m_ObjectHideFlags: 0
