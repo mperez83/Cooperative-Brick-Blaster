@@ -4,25 +4,30 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
+
 public class LevelSelect : MonoBehaviour
 {
-    private string LevelSelected = "None";
-    public Text Test;
-    public Button startButton, backButton, Level1, Level2, Level3;
+    public Button startButton;
+    
 
-    //start out with grayed out start button
+    
     void Start(){
+        //start out with no level selected and reset to none when re-entering level select
+        GameMaster.instance.LevelSelected = "None";
+        
+        //start out with grayed out start button
         startButton.interactable = false;
     }
 
-    //make start button clickable when a level is selected
+    
     void Update(){
-        if(LevelSelected != "None"){
+        //update start button if a level/map is selected
+        if(GameMaster.instance.LevelSelected != "None"){
             startButton.interactable = true;
         }
     }
 
-    public void Lvl1()
+    /*public void Lvl1()
     {
         LevelSelected = "Map_1";
         Test.text = "Selected Level: " + LevelSelected; // for testing purposes
@@ -39,11 +44,11 @@ public class LevelSelect : MonoBehaviour
     {
         LevelSelected = "Map_3";
         Test.text = "Selected Level: " + LevelSelected;// for testing purposes
-    }
+    }*/
 
     public void SelectLevel()
     {
-        SceneManager.LoadScene(LevelSelected);
+        SceneManager.LoadScene(GameMaster.instance.LevelSelected);
     }
 
     public void BackToMainMenu()

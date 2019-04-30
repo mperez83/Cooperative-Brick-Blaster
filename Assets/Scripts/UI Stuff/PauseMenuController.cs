@@ -7,6 +7,8 @@ public class PauseMenuController : MonoBehaviour
 {
     public string levelSelectScene;
     public GameObject pauseMenu;
+    public GameObject results;
+    public GameObject cntDwn;
     public bool isPaused;
 
     void Start()
@@ -17,7 +19,8 @@ public class PauseMenuController : MonoBehaviour
     void Update()
     {
         //for left player press esc key for pause menu; pause menu needs to be turned off by default
-        if (Input.GetKeyDown(KeyCode.Escape))
+        //update: made sure that pause menu can't open when countdown or results screen is showing
+        if (Input.GetKeyDown(KeyCode.Escape) && results.activeInHierarchy == false && cntDwn.activeInHierarchy == false)
         {
             if (isPaused)
             {

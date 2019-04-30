@@ -11,6 +11,9 @@ public class GameMaster : MonoBehaviour
     public bool g_coop = false;
 
     [HideInInspector]
+    public string LevelSelected = "None";
+
+    [HideInInspector]
     public float screenTopEdge;
     [HideInInspector]
     public float screenBottomEdge;
