@@ -114,6 +114,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minMagnitude: 5
   maxMagnitude: 10
+  minVerticalSpeed: 1.5
 --- !u!58 &7579195178711178526
 CircleCollider2D:
   m_ObjectHideFlags: 0
