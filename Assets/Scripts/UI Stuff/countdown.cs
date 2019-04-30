@@ -14,7 +14,7 @@ public class countdown : MonoBehaviour
     IEnumerator startDelay()
     {
         Time.timeScale = 0f;
-        float pauseTime = Time.realtimeSinceStartup + 4f;
+        float pauseTime = Time.realtimeSinceStartup + 3.5f;
         while (Time.realtimeSinceStartup < pauseTime)
         {
             yield return 0;
