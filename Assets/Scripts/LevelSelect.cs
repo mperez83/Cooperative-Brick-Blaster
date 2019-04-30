@@ -34,17 +34,18 @@ public class LevelSelect : MonoBehaviour
             startButton.interactable = true;
         }
         //update coop toggle & text
+        
         if (coop.isOn)
         {
             coopToggleText.text = "Mode:\nCo-op";
-            GameMaster.instance.g_coop = true;
+            //GameMaster.instance.g_coop = true;
         }
         else
         {
             coopToggleText.text = "Mode:\nVersus";
-            GameMaster.instance.g_coop = false;
+            //GameMaster.instance.g_coop = false;
         }
-
+         
         //update preview image
         if(GameMaster.instance.LevelSelected == "Map_1"){
             preview.sprite = previewMap1;

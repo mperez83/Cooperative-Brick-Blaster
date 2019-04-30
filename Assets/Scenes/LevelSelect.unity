@@ -124,7 +124,7 @@ GameObject:
   - component: {fileID: 117906547}
   - component: {fileID: 117906546}
   m_Layer: 5
-  m_Name: ModeText
+  m_Name: coopToggleText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -361,10 +361,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 933324778}
     m_Modifications:
-    - target: {fileID: 1665269849499519415, guid: c14b0106858ebfb4aa2c949f7a880fc6,
+    - target: {fileID: 1665269849499519408, guid: c14b0106858ebfb4aa2c949f7a880fc6,
         type: 3}
-      propertyPath: m_Name
-      value: MapButton (1)
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: Map_2
       objectReference: {fileID: 0}
     - target: {fileID: 1665269849499519411, guid: c14b0106858ebfb4aa2c949f7a880fc6,
         type: 3}
@@ -471,10 +471,10 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 1665269849499519408, guid: c14b0106858ebfb4aa2c949f7a880fc6,
+    - target: {fileID: 1665269849499519415, guid: c14b0106858ebfb4aa2c949f7a880fc6,
         type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
-      value: Map_2
+      propertyPath: m_Name
+      value: MapButton (1)
       objectReference: {fileID: 0}
     - target: {fileID: 6836850810309949716, guid: c14b0106858ebfb4aa2c949f7a880fc6,
         type: 3}
@@ -742,10 +742,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 933324778}
     m_Modifications:
-    - target: {fileID: 1665269849499519415, guid: c14b0106858ebfb4aa2c949f7a880fc6,
+    - target: {fileID: 1665269849499519408, guid: c14b0106858ebfb4aa2c949f7a880fc6,
         type: 3}
-      propertyPath: m_Name
-      value: MapButton
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: Map_1
       objectReference: {fileID: 0}
     - target: {fileID: 1665269849499519411, guid: c14b0106858ebfb4aa2c949f7a880fc6,
         type: 3}
@@ -852,10 +852,10 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 1665269849499519408, guid: c14b0106858ebfb4aa2c949f7a880fc6,
+    - target: {fileID: 1665269849499519415, guid: c14b0106858ebfb4aa2c949f7a880fc6,
         type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
-      value: Map_1
+      propertyPath: m_Name
+      value: MapButton
       objectReference: {fileID: 0}
     - target: {fileID: 6836850810309949716, guid: c14b0106858ebfb4aa2c949f7a880fc6,
         type: 3}
@@ -897,10 +897,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 933324778}
     m_Modifications:
-    - target: {fileID: 1665269849499519415, guid: c14b0106858ebfb4aa2c949f7a880fc6,
+    - target: {fileID: 1665269849499519408, guid: c14b0106858ebfb4aa2c949f7a880fc6,
         type: 3}
-      propertyPath: m_Name
-      value: MapButton (2)
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: Map_3
       objectReference: {fileID: 0}
     - target: {fileID: 1665269849499519411, guid: c14b0106858ebfb4aa2c949f7a880fc6,
         type: 3}
@@ -1007,10 +1007,10 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 1665269849499519408, guid: c14b0106858ebfb4aa2c949f7a880fc6,
+    - target: {fileID: 1665269849499519415, guid: c14b0106858ebfb4aa2c949f7a880fc6,
         type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
-      value: Map_3
+      propertyPath: m_Name
+      value: MapButton (2)
       objectReference: {fileID: 0}
     - target: {fileID: 6836850810309949716, guid: c14b0106858ebfb4aa2c949f7a880fc6,
         type: 3}
@@ -1365,7 +1365,7 @@ GameObject:
   - component: {fileID: 698063895}
   - component: {fileID: 698063896}
   m_Layer: 5
-  m_Name: Co-Op Toggle
+  m_Name: coop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1949,7 +1949,7 @@ GameObject:
   - component: {fileID: 1540054025}
   - component: {fileID: 1540054024}
   m_Layer: 5
-  m_Name: Map_Preview
+  m_Name: preview
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
