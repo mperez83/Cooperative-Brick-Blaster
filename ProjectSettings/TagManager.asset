@@ -8,6 +8,9 @@ TagManager:
   - Scoreboard
   - Results
   - Brick
+  - Ball
+  - Power_Up
+  - Laser
   layers:
   - Default
   - TransparentFX
