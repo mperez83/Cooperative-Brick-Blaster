@@ -24,39 +24,43 @@ public class Ball : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
         ballInPlay = false;
 
-        // if (GameMaster.instance.g_coop == false)
-        // {
-        //     ChangeBallType(BallType.Grey);
-        //     gameObject.AddComponent<BallClaim>();
-        // }
+        ChangeBallType(ballType);
+
+        if (GameMaster.instance.g_coop == false)
+        {
+            gameObject.AddComponent<BallClaim>();
+        }
     }
 
     void Update()
     {
         // Ball Shoot
-        if ((ballType == BallType.Red && Input.GetButtonDown("Jump") && ballInPlay == false)
-            || (ballType == BallType.Blue && Input.GetButtonDown("RightControl") && ballInPlay == false))
+        if (transform.parent != null)
         {
-            transform.parent = null;
-            ballInPlay = true;
-            rb.isKinematic = false;
-
-            int randX = Random.Range(0, 2);
-            int randY = Random.Range(0, 2);
-
-            Vector2 launchDirection = new Vector2();
-            launchDirection.y = 2f;
-
-            if (randX == 0)
+            if ((transform.parent.name == "Red_Paddle" && Input.GetButtonDown("Jump") && ballInPlay == false)
+            || (transform.parent.name == "Blue_Paddle" && Input.GetButtonDown("RightControl") && ballInPlay == false))
             {
-                launchDirection.x = -3f;
-            }
-            else
-            {
-                launchDirection.x = 3f;
-            }
+                transform.parent = null;
+                ballInPlay = true;
+                rb.isKinematic = false;
 
-            rb.velocity = launchDirection;
+                int randX = Random.Range(0, 2);
+                int randY = Random.Range(0, 2);
+
+                Vector2 launchDirection = new Vector2();
+                launchDirection.y = 2f;
+
+                if (randX == 0)
+                {
+                    launchDirection.x = -3f;
+                }
+                else
+                {
+                    launchDirection.x = 3f;
+                }
+
+                rb.velocity = launchDirection;
+            }
         }
 
         // Ball Destroy & Respawn
@@ -73,7 +77,20 @@ public class Ball : MonoBehaviour
                 }
                 else
                 {
-                    Instantiate(respawnBall, new Vector2(0, -2), Quaternion.identity);
+                    if (ballType == BallType.Red)
+                    {
+                        respawnBall = Instantiate(respawnBall, new Vector2(GameObject.Find("Red_Paddle").transform.position.x, (float)-3.5), Quaternion.identity) as GameObject;
+                        respawnBall.transform.parent = GameObject.Find("Red_Paddle").transform;
+                        respawnBall.GetComponent<Ball>().ChangeBallType(BallType.Red);
+                    }
+                    else if (ballType == BallType.Blue)
+                    {
+                        respawnBall = Instantiate(respawnBall, new Vector2(GameObject.Find("Blue_Paddle").transform.position.x, (float)-3.5), Quaternion.identity) as GameObject;
+                        respawnBall.transform.parent = GameObject.Find("Blue_Paddle").transform;
+                        respawnBall.GetComponent<Ball>().ChangeBallType(BallType.Blue);
+                    }
+                    rb = respawnBall.GetComponent<Rigidbody2D>();
+                    rb.isKinematic = true;
                 }
             }
             else
@@ -83,18 +100,34 @@ public class Ball : MonoBehaviour
                     gameController.GetComponent<VersusHandler>().player1Score -= 100;
                     respawnBall = Instantiate(respawnBall, new Vector2(GameObject.Find("Red_Paddle").transform.position.x, (float)-3.5), Quaternion.identity) as GameObject;
                     respawnBall.transform.parent = GameObject.Find("Red_Paddle").transform;
+                    respawnBall.GetComponent<Ball>().ChangeBallType(BallType.Red);
                 }
                 else if (ballType == BallType.Blue)
                 {
                     gameController.GetComponent<VersusHandler>().player2Score -= 100;
                     respawnBall = Instantiate(respawnBall, new Vector2(GameObject.Find("Blue_Paddle").transform.position.x, (float)-3.5), Quaternion.identity) as GameObject;
                     respawnBall.transform.parent = GameObject.Find("Blue_Paddle").transform;
+                    respawnBall.GetComponent<Ball>().ChangeBallType(BallType.Blue);
+                }
+                else if (ballType == BallType.Grey)
+                {
+                    if (Random.Range(0, 2) == 0)
+                    {
+                        respawnBall = Instantiate(respawnBall, new Vector2(GameObject.Find("Red_Paddle").transform.position.x, (float)-3.5), Quaternion.identity) as GameObject;
+                        respawnBall.transform.parent = GameObject.Find("Red_Paddle").transform;
+                        respawnBall.GetComponent<Ball>().ChangeBallType(BallType.Red);
+                    }
+                    else
+                    {
+                        respawnBall = Instantiate(respawnBall, new Vector2(GameObject.Find("Blue_Paddle").transform.position.x, (float)-3.5), Quaternion.identity) as GameObject;
+                        respawnBall.transform.parent = GameObject.Find("Blue_Paddle").transform;
+                        respawnBall.GetComponent<Ball>().ChangeBallType(BallType.Blue);
+                    }
                 }
                 rb = respawnBall.GetComponent<Rigidbody2D>();
                 rb.isKinematic = true;
 
                 gameController.GetComponent<VersusHandler>().UpdateScoreText();
-
             }
 
             Destroy(gameObject);
@@ -124,17 +157,6 @@ public class Ball : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D other)
     {
-        switch (other.gameObject.name)
-        {
-            case "Red_Paddle":
-                ChangeBallType(BallType.Red);
-                break;
-
-            case "Blue_Paddle":
-                ChangeBallType(BallType.Blue);
-                break;
-        }
-
         if (other.gameObject.CompareTag("Brick"))
         {
             audioSource.clip = brickBreakSound;
