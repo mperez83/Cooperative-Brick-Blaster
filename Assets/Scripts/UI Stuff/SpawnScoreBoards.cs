@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class SpawnScoreBoards : MonoBehaviour
 {
-    public Text CoopScore, Player1Score, Player2Score;
+    public TextMeshProUGUI CoopScore, Player1Score, Player2Score;
     GameObject gameController;
 
     void Start()

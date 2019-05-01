@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class VersusHandler : MonoBehaviour
 {
@@ -48,8 +49,8 @@ public class VersusHandler : MonoBehaviour
         }
         else
         {
-            scoreboard.transform.Find("Player1Score").GetComponent<Text>().text = "Score: " + player1Score.ToString();
-            scoreboard.transform.Find("Player2Score").GetComponent<Text>().text = "Score: " + player2Score.ToString();
+            scoreboard.transform.Find("Player1Score").GetComponent<TextMeshProUGUI>().text = "Score: " + player1Score.ToString();
+            scoreboard.transform.Find("Player2Score").GetComponent<TextMeshProUGUI>().text = "Score: " + player2Score.ToString();
         }
     }
 }

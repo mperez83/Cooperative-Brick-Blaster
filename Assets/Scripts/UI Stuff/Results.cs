@@ -33,8 +33,8 @@ public class Results : MonoBehaviour
             int p1Score = gameController.GetComponent<VersusHandler>().player1Score;
             int p2Score = gameController.GetComponent<VersusHandler>().player2Score;
 
-            VsScoreP1.text = p1Score.ToString();
-            VsScoreP2.text = p2Score.ToString();
+            VsScoreP1.text = "Player 1: " + p1Score.ToString();
+            VsScoreP2.text = "Player 2: " + p2Score.ToString();
 
             if (p1Score > p2Score)
                 title.text = "Player 1 Wins!";

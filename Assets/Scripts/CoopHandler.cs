@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class CoopHandler : MonoBehaviour
 {
@@ -29,7 +30,7 @@ public class CoopHandler : MonoBehaviour
         }
         else
         {
-            scoreboard.transform.Find("CoopScore").GetComponent<Text>().text = "Score: " + coopScore.ToString();
+            scoreboard.transform.Find("CoopScore").GetComponent<TextMeshProUGUI>().text = "Score: " + coopScore.ToString();
         }
     }
 }
