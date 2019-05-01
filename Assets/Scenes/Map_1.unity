@@ -1977,7 +1977,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8889ea433e79f3c4c95e6241c9518c28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 8
+  speed: 12
   moveLeftKey: 276
   moveRightKey: 275
 --- !u!212 &617456256
@@ -3746,7 +3746,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8889ea433e79f3c4c95e6241c9518c28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 8
+  speed: 12
   moveLeftKey: 97
   moveRightKey: 100
 --- !u!212 &1239127971
